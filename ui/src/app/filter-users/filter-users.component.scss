@@ -1,0 +1,19 @@
+.filter-options {
+    display: flex;
+    position: absolute;
+    top: 30px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    z-index: 1;
+  }
+  
+  .filter.active + .filter-options {
+    display: block;
+  }
+  
+  .filter-options select {
+    width: 150px; /* Adjust as needed */
+  }
+  

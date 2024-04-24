@@ -1,0 +1,95 @@
+type Query {
+  # Get all users
+  users: [User!]!
+
+  # Get a user by ID
+  user(id: ID!): User
+
+  # Get all courses
+  courses: [Course!]!
+
+  # Get a course by ID
+  course(id: ID!): Course
+
+  # Get all books
+  books: [Book!]!
+
+  # Get a book by ID
+  book(id: ID!): Book
+}
+
+type Mutation {
+  # Create a new user
+   createUser(username: String!, password: String!, email: String!): ServiceResponseOfBoolean!
+
+  # Update an existing user
+  updateUser(id: ID!, username: String, password: String, email: String): User!
+
+  # Delete a user
+  deleteUser(id: ID!): ID
+
+  # Create a new course
+  createCourse(id: ID!, name: String!, description: String!): Course!
+
+  # Update an existing course
+  updateCourse(id: ID!, name: String, description: String): Course!
+
+  # Delete a course
+  deleteCourse(id: ID!): ID
+
+  # Create a new book
+  createBook(id:ID!, title: String!, authorId: ID!, genreId: ID!, copies: Int!): Book!
+
+  # Update an existing book
+  updateBook(id: ID!, title: String, authorId: ID, genreId: ID, copies: Int): Book!
+
+  # Delete a book
+  deleteBook(id: ID!): ID
+
+   borrowBook(userId: ID!, bookId: ID!): Borrowing!
+
+  # Return a book
+  returnBook(borrowingId: ID!): Boolean!
+
+}
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+}
+
+type Course {
+  id: ID!
+  name: String!
+  description: String!
+}
+
+type Book {
+  id: ID!
+  title: String!
+  author: Author!
+  genre: Genre!
+  copies: Int!
+}
+
+type Author {
+  id: ID!
+  name: String!
+}
+
+type Genre {
+  id: ID!
+  name: String!
+}
+
+
+type Borrowing {
+  id: ID!
+  userId: ID!
+  user: User!
+  bookId: ID!
+  book: Book!
+  borrowedDate: String!
+  returnDate: String
+}

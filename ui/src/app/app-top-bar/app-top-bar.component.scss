@@ -1,0 +1,33 @@
+.top-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    background-color: #00c04b;
+  
+}
+
+.logo {
+    margin-left: 50px;
+    color: black;
+}
+
+.logo a{
+    color: black;
+    
+}
+
+
+
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+
+.links a {
+    margin: 20px; /* Remove default margin from h2 */
+    color: white; /* Set text color to white */
+}

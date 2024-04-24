@@ -1,0 +1,14 @@
+.vs/
+*.suo
+*.user
+
+# Ignore build files
+bin/
+obj/
+
+# Ignore NuGet packages
+/packages/
+*.nupkg
+
+# Ignore Node.js modules
+/node_modules/
